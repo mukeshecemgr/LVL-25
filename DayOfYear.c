@@ -176,6 +176,6 @@ int main(int argc, char *argv[])
 	printf("* Remaining Days in year	: %d\n",remaining_day_year);
 	printf("* Total days in year		: %d\n",day_of_year + remaining_day_year);
 	printf("**************************\n");
-
+	exit(0);
 }
 /************************************* End of File *****************************************/
