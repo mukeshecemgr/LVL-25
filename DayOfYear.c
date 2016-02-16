@@ -1,13 +1,30 @@
+/************************************************************************************
+ * File : DayOfYear.c
+ * Description : This file takes user input in the format of dd-mm-yyyy, and gives 
+ * 		 Day of the year as output
+ * **********************************************************************************/
+/************************************************************************************
+ * 				Include Files				 
+ ***********************************************************************************/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
+/************************************************************************************
+ * 				Macro Defines				 
+ ***********************************************************************************/
 #define MAX_LEN 10
 #define LEAP_YEAR 1
 #define NOT_LEAP_YEAR 2
-
+/************************************************************************************
+ * 				Global Variables				 
+ ***********************************************************************************/
 int days[12] = {31,28,31,30,31,30,31,31,30,31,30,31};
 
+/************************************************************************************
+ * Function : check_leap_year
+ * Description : This function check whether given year is leap year or not
+ ************************************************************************************/
 int check_leap_year(int year)
 {
 	if ( year % 400 == 0 || year % 4 == 0)
@@ -16,6 +33,10 @@ int check_leap_year(int year)
 		return NOT_LEAP_YEAR;
 }
 
+/************************************************************************************
+ * Function : main
+ * Description : This function provides control to enter into the program
+ ************************************************************************************/
 int main(int argc, char *argv[])
 {
 	char dmy[10] = {0}; //Holds user input
@@ -150,9 +171,11 @@ int main(int argc, char *argv[])
 	day_of_year += iDate;
 	remaining_day_year -= day_of_year;
 	printf("**************************\n");
+	printf("* Year %d is %s\n",iYear,(isLeapYear == LEAP_YEAR)?"a Leap Year":"Not a Leap Year");
 	printf("* Day of Year:			: %d\n",day_of_year);
 	printf("* Remaining Days in year	: %d\n",remaining_day_year);
 	printf("* Total days in year		: %d\n",day_of_year + remaining_day_year);
 	printf("**************************\n");
 
 }
+/************************************* End of File *****************************************/
